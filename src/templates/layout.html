@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="language" content="pt-BR" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{title}} | AO3 Preview</title>
+  <style>
+    body {
+      font: 100% / 1.125 'Lucida Grande', 'Lucida Sans Unicode', Verdana, Helvetica, sans-serif, 'GNU Unifont';
+      margin: 0;
+      padding: 0;
+      background-color: #444;
+      color: #eee;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #555;
+      box-shadow: #292b2e 0px 1px 2px;
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    button {
+      font: 'Lucida Grande', 'Lucida Sans Unicode', Verdana, Helvetica, sans-serif, 'GNU Unifont';
+      font-size: .9rem;
+      background-color: #292b2e;
+      color: white;
+      border: none;
+      padding: 8px 10px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    select {
+      font: 'Lucida Grande', 'Lucida Sans Unicode', Verdana, Helvetica, sans-serif, 'GNU Unifont';
+      font-size: .9rem;
+      background-color: #292b2e;
+      padding: 5px;
+      padding-right: 15px;
+      border-radius: 5px;
+      border: 1px solid #292b2e;
+      min-width: 120px;
+      color: white;
+      margin-left: 5px;
+      margin-right: 5px;
+    }
+
+    .el-p {
+      text-align: justify;
+      padding: 5px 0px;
+    }
+
+    .el-hr {
+      padding: 20px 0px;
+    }
+
+    #content {
+      max-width: 1000px;
+      margin: 0 auto;
+      background-color: #555;
+      padding: 5px 20px;
+      box-shadow: #292b2e 0px 2px 4px;
+    }
+
+    h1 {
+      display: block;
+      text-align: center;
+    }
+
+    @media (max-width: 320px) {
+      select {
+        max-width: 120px;
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <button type="button" onclick="handleChapterChange(event)" value="{{prevChapter}}" {{disabledPrev}}>Anterior</button>
+    <select name="chapters" id="chapters" onchange="handleChapterChange(event)">
+      <option selected>Capítulos...</option>
+      {{chapters}}
+    </select>
+    <button type="button" onclick="handleChapterChange(event)" value="{{nextChapter}}" {{disabledNext}}>Proximo</button>
+  </header>
+
+  <main>
+    {{content}}
+  </main>
+
+  <footer>
+
+  </footer>
+
+
+  <script>
+    function handleChapterChange(event) {
+      const selectedChapter = event.target.value
+      window.location.href = `/chapters/${selectedChapter}`
+    }
+  </script>
+</body>
+
+</html>
