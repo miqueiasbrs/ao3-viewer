@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "NodeNext",
+    "outDir": "dist",
+    "rootDir": ".",
+    "strict": true,
+    "noEmitOnError": true,
+    "noImplicitAny": true,
+    "removeComments": true,
+    "esModuleInterop": true,
+    "strictNullChecks": true,
+    "preserveConstEnums": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "moduleDetection": "force",
+    "allowJs": false,
+    "types": ["node"],
+    "declaration": true,
+    "isolatedModules": true
+  },
+  "include": ["src/**/*", "tests/**/*"],
+  "exclude": ["dist/*", "node_modules/", "docker/", ".vscode/", ".idea/", ".husky/", ".github/"]
+}
